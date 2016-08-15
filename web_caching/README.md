@@ -1,4 +1,4 @@
 # Web Caching in C
-## Threaded Server
-## Threaded Proxy
+## Threaded Main Server
+## Threaded Proxy Server
 ## Simple Client
