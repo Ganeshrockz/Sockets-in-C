@@ -35,7 +35,7 @@ int main(void)
 
 	struct sockaddr_in server_address;
 	server_address.sin_family 	= AF_INET;
-	server_address.sin_port 	= htons(3000);
+	server_address.sin_port 	= htons(8000);
 	server_address.sin_addr.s_addr 	= INADDR_ANY;
 
 	int status = connect(network_socket, (struct sockaddr*)&server_address, sizeof(server_address));	
@@ -60,7 +60,7 @@ int main(void)
 	scanf("%s", Req.version);
 	strcat(req, Req.version);
 	strcat(req, "\r\n\r\n");
-
+	puts(req);
 	send(network_socket, req, sizeof(req), 0);
 	int l;
 	do{

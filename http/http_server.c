@@ -20,12 +20,11 @@ int main(void)
 	while(1){
 		int client = accept(network_socket, NULL, NULL);
 		FILE *fp = fopen("index.html", "r");
-		char res[BUFF*5] = "HTTP/1.1 GET OK\r\n\n";
+		char res[BUFF*5] = "HTTP/1.1 GET OK\r\n\r\n";
 		char data[BUFF*4] = "\0";
 		fscanf(fp, "%[^EOF]", data);
 		strcat(res, data);
 		send(client, res, BUFF*5, 0);
-		close(client);
 	}
 	return 0;
 }
